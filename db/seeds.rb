@@ -1,6 +1,8 @@
-names = ["Achtsamkeit und Meditation", "Aikido / Aikikai Münster", "Akrobatik",
-  "American Football", "Aquafitness", "Ausdauer-Inlineskaten / Speedskating",
-  "Auszeit - Die gesunde Viertelstunde","Autogenes Training"]
+names = ["Ski und Snowboard", "Fußball", 'Triathlon', "Rennrad"]
+sports = {
+  'Ski und Snowboard' => "Bester Sport der Welt und dementsprechend sollte jeder diese Sportart buchen - achja, ich spreche von Ski",
+  'Fußball' => 'Deutschlands populärster Sport'
+}
 
 
 puts "Destroying db-content"
