@@ -1,4 +1,3 @@
-names = ["Ski und Snowboard", "Fußball", 'Triathlon', "Rennrad"]
 sports = [
   { name: 'Schach',
     description: 'Schach ist eines der bekanntesten Brettspiele der Welt und die Meisten haben es schon einmal irgendwann kennengelernt und ausprobiert. Sowohl längerfristige Strategie, als auch kurzfristige taktische Manöver gilt es zu finden und richtig umzusetzen, um den gegnerischen König Schachmatt zu setzen.     Ob Sport, Spiel, Wissenschaft oder Kunst, das ?Spiel der Könige? trainiert sehr viele mentale Fähigkeiten: Gedächtnis, Konzentrationsfähigkeit, Vorausdenken, Denkgeschwindigkeit etc. Dennoch ist es uns wichtig, dass der Spaß- und Spielaspekt nicht verloren geht. So wird jedes Training viel gespielt und man lernt schnell tolle Leute kennen.
@@ -35,15 +34,41 @@ sports = [
     physical_contact: 2 }
 ]
 
+courses = [
+  { name: 'Beginner 101',
+    description: 'Great for people that never had contact with this sport',
+    start_date: Date.today + 10,
+    end_date: Date.today + 55,
+    level: 'beginner',
+    sport: Sport.last },
+  {  name: 'Wow...Intermediate',
+    description: "Ok...you already have experience, but didn't master it",
+    start_date: Date.today + 12,
+    end_date: Date.today + 49,
+    level: 'intermediate',
+    sport: Sport.last},
+  {  name: 'Godmode-level',
+    description: 'No noobs!',
+    start_date: Date.today + 8,
+    end_date: Date.today + 35,
+    level: 'advanced',
+    sport: Sport.last}
+]
+
+
 
 puts "Destroying db-content"
 Sport.destroy_all
+Course.destroy_all
 puts "Done"
 
-puts "Creating sports"
+puts "Creating sports and courses"
 
 sports.each do |sport|
   Sport.create(sport)
+  courses.each do |course|
+    Course.create(course)
+  end
 end
 
 puts "Done"

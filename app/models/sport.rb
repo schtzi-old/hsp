@@ -1,5 +1,5 @@
 class Sport < ApplicationRecord
-  has_many :courses
+  has_many :courses, dependent: :destroy
 
   validates :name, length: { maximum: 25 }, uniqueness: true
   validates :description, length: { maximum: 1000 }
