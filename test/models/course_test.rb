@@ -35,7 +35,7 @@ class CourseTest < ActiveSupport::TestCase
     assert_equal true, course.save
 
     course = Course.new(name: "Advanced 1", capacity: 20, start_date: Date.yesterday, end_date: Date.tomorrow, level: 'mongo-level', sport: Sport.last)
-    assert_equal false, course.save
+    assert_equal false , course.save
   end
 
   test 'start date < end date' do
